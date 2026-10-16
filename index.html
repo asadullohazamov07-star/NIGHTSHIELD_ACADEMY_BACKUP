@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110d">
+  <meta name="description" content="NIGHTSHIELD ACADEMY — kiberxavfsizlik, dasturlash va raqamli savodxonlik platformasi.">
+  <title>NIGHTSHIELD ACADEMY | Digital Defense</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient a"></div>
+  <div class="ambient b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="NIGHTSHIELD bosh sahifa">
+      <span class="brand-mark">N.</span>
+      <span>NIGHT<span class="green">SHIELD</span><small>ACADEMY / DIGITAL DEFENSE</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Asosiy menyu">
+      <a href="#courses">Kurslar</a>
+      <a href="#lessons">Darslar</a>
+      <a href="#resources">Media qo‘llanmalar</a>
+      <a href="#practice">Amaliyot</a>
+      <a href="#glossary">Lug‘at</a>
+    </nav>
+
+    <div class="account-area">
+      <span id="userBadge" class="user-badge hidden"></span>
+      <button id="authOpen" class="btn btn-outline" type="button">Kirish</button>
+      <button id="logoutBtn" class="btn btn-outline hidden" type="button">Chiqish</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero wrap">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> O‘RGANING. HIMOYALANING. RIVOJLANING.</div>
+        <h1>Raqamli dunyoda<br><span class="gradient-text">kuchli bilim</span> — sizning eng katta himoyangiz.</h1>
+        <p class="hero-sub">Kiberxavfsizlik, dasturlash va kompyuter savodxonligini bosqichma-bosqich o‘rganing. Darslarni o‘qing, testlarda bilimingizni tekshiring va natijalaringizni kuzating.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#courses">O‘rganishni boshlash ↗</a>
+          <button class="btn btn-quiet" id="heroAuth" type="button">Hisob yaratish</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="heroLessonCount">16+</strong><span>O‘quv darslari</span></div>
+          <div><strong>03</strong><span>Amaliy mashq</span></div>
+          <div><strong>MEDIA</strong><span>Rasmli va video qo‘llanma</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Raqamli xavfsizlik tasviri">
+        <div class="orbit one"></div>
+        <div class="orbit two"></div>
+        <div class="shield">
+          <div class="shield-inner">
+            <span class="shield-lock">⌑</span>
+            <b>SECURE</b>
+            <small>NIGHTSHIELD SYSTEM</small>
+          </div>
+        </div>
+        <div class="float-card card-top"><span class="status-dot"></span> Himoya rejimi faol</div>
+        <div class="float-card card-bottom">⌘ &nbsp; <span>Bilim darajasi<br><small>Har kuni bir qadam</small></span></div>
+      </div>
+    </section>
+
+    <div class="trust-strip wrap">
+      <span>O‘RGANISH YO‘NALISHLARI</span>
+      <div>⛨ Kiberxavfsizlik</div>
+      <div>⌘ Dasturlash</div>
+      <div>◈ Axborot xavfsizligi</div>
+      <div>▦ Kompyuter savodxonligi</div>
+    </div>
+
+    <section id="courses" class="section wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">BILIMLAR MARKAZI</div>
+          <h2>Kursni tanlang <span class="green">va boshlang.</span></h2>
+          <p>Yo‘nalishni tanlang — mos darslar avtomatik ko‘rsatiladi.</p>
+        </div>
+      </div>
+
+      <div class="course-grid" id="courseGrid">
+        <button class="course-card active" data-course="all" type="button">
+          <span class="course-icon">◈</span><b>Barcha kurslar</b><small>To‘liq katalog</small>
+        </button>
+        <button class="course-card" data-course="cyber" type="button">
+          <span class="course-icon">⛨</span><b>Kiberxavfsizlik</b><small>Himoya va tahdidlar</small>
+        </button>
+        <button class="course-card" data-course="programming" type="button">
+          <span class="course-icon">&lt;/&gt;</span><b>Dasturlash</b><small>Web va kod asoslari</small>
+        </button>
+        <button class="course-card" data-course="information" type="button">
+          <span class="course-icon">⌘</span><b>Axborot texnologiyalari</b><small>Tizim va tarmoqlar</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="lessons" class="section wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">O‘QUV DASTURI</div>
+          <h2>Darslar <span class="green">kutmoqda.</span></h2>
+          <p>Har bir darsda tushuntirish va bilimni tekshirish uchun mini-test bor.</p>
+        </div>
+        <div class="lesson-tools">
+          <input id="lessonSearch" type="search" placeholder="Dars qidirish…" aria-label="Dars qidirish">
+          <select id="lessonFilter" aria-label="Dars filtri">
+            <option value="all">Barcha yo‘nalishlar</option>
+            <option value="cyber">Kiberxavfsizlik</option>
+            <option value="programming">Dasturlash</option>
+            <option value="information">Axborot texnologiyalari</option>
+          </select>
+        </div>
+      </div>
+      <div id="lessonGrid" class="lesson-grid"></div>
+      <p id="emptyLessons" class="empty-state hidden">Bu qidiruv bo‘yicha dars topilmadi.</p>
+    </section>
+
+    <section class="progress-section">
+      <div class="wrap progress-inner">
+        <div>
+          <div class="eyebrow">SHAXSIY RIVOJLANISH</div>
+          <h2>Har bir qadam<br><span class="green">hisobga olinadi.</span></h2>
+          <p>Yakunlangan darslar va test natijalari ushbu brauzerda saqlanadi. Bu versiyada server hisobi ishlatilmaydi.</p>
+          <button class="btn btn-primary" id="progressAuth" type="button">Hisob haqida</button>
+        </div>
+        <div class="progress-panel">
+          <div class="panel-top"><span>MENING NATIJALARIM</span><span class="live-tag">● LOCAL</span></div>
+          <div class="progress-number"><strong id="completedCount">0</strong><span>/ <span id="totalCount">16</span> dars yakunlandi</span></div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="progress-foot"><span>Testlarning o‘rtacha natijasi</span><strong id="averageScore">—</strong></div>
+          <div class="progress-note" id="progressMessage">Natijalar avtomatik saqlanadi.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice" class="section wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">AMALIY MASHG‘ULOT</div>
+          <h2>Bilimni <span class="green">sinab ko‘ring.</span></h2>
+          <p>Qisqa topshiriqlar orqali xavfsizlik odatlaringizni mustahkamlang.</p>
+        </div>
+      </div>
+
+      <div class="practice-grid">
+        <article class="practice-card">
+          <div class="game-icon">⌁</div><div class="game-tag">01 / TEZKOR TEST</div>
+          <h3>Fishingni aniqlang</h3><p>Shubhali xabarni tanib olishni o‘rganing.</p>
+          <button class="text-button" data-practice="phishing" type="button">Mashqni boshlash ↗</button>
+        </article>
+        <article class="practice-card">
+          <div class="game-icon">▦</div><div class="game-tag">02 / PAROL USTAXONASI</div>
+          <h3>Parolni baholang</h3><p>Kuchli parol tanlash va uni xavfsiz saqlash.</p>
+          <button class="text-button" data-practice="password" type="button">Mashqni boshlash ↗</button>
+        </article>
+        <article class="practice-card">
+          <div class="game-icon">⛨</div><div class="game-tag">03 / XAVFSIZ TANLOV</div>
+          <h3>To‘g‘ri qaror</h3><p>Kundalik raqamli vaziyatlarda xavfsiz yo‘lni toping.</p>
+          <button class="text-button" data-practice="choices" type="button">Mashqni boshlash ↗</button>
+        </article>
+      </div>
+
+      <div id="practiceArea" class="practice-area hidden"></div>
+
+      <div class="password-tool">
+        <div>
+          <div class="eyebrow">MAXFIYLIK USTAXONASI</div>
+          <h3>Parol kuchini tekshiring</h3>
+          <p>Tekshiruv faqat brauzeringizda amalga oshadi. Haqiqiy parolingizni kiritmang — namuna ishlating.</p>
+        </div>
+        <div>
+          <input id="passwordInput" type="password" placeholder="Namuna parol kiriting" autocomplete="new-password">
+          <div class="strength-track"><span id="strengthBar"></span></div>
+          <p id="passwordFeedback">Parol bahosi shu yerda ko‘rinadi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="glossary" class="section wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">TEZKOR MA’LUMOTNOMA</div>
+          <h2>Atamalar <span class="green">lug‘ati.</span></h2>
+          <p>Asosiy tushunchalarni qidiring va qisqa izohini o‘qing.</p>
+        </div>
+        <input id="glossarySearch" type="search" placeholder="Atama qidirish…" aria-label="Atama qidirish">
+      </div>
+      <div id="glossaryGrid" class="glossary-grid"></div>
+    </section>
+
+    <section id="admission" class="section wrap admission">
+      <div>
+        <div class="eyebrow">NIGHTSHIELD ACADEMY</div>
+        <h2>O‘rganish bugun <span class="green">boshlanadi.</span></h2>
+        <p>O‘zingizga mos yo‘nalishni tanlang, darslarni o‘qing va o‘rganish natijalarini kuzatib boring. Platformadagi darslar mustaqil ta’lim uchun mo‘ljallangan.</p>
+        <button class="btn btn-primary" id="admissionAuth" type="button">Hisob haqida ↗</button>
+      </div>
+      <div class="admission-points">
+        <div><b>01</b><span><strong>Bepul boshlash</strong><small>Darslarni ochib o‘rganing</small></span></div>
+        <div><b>02</b><span><strong>Bilimni sinash</strong><small>Mini-test va amaliy mashqlar</small></span></div>
+        <div><b>03</b><span><strong>Shaxsiy natijalar</strong><small>Brauzeringizda saqlanadi</small></span></div>
+      </div>
+    </section>
+
+    <section id="resources" class="section wrap resources-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">KO‘RGAZMALI BILIMLAR</div>
+          <h2>Rasmli va video <span class="green">qo‘llanmalar.</span></h2>
+          <p>Mavzularni qisqa izoh, ko‘rgazmali sxema va video darslar orqali mustahkamlang. Video havolalari YouTube qidiruvini ochadi.</p>
+        </div>
+        <div class="lesson-tools">
+          <input id="resourceSearch" type="search" placeholder="Qo‘llanma qidirish…" aria-label="Qo‘llanma qidirish">
+          <select id="resourceFilter" aria-label="Qo‘llanma turi">
+            <option value="all">Barcha materiallar</option>
+            <option value="visual">Rasmli qo‘llanma</option>
+            <option value="video">Video dars</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="resource-highlights">
+        <div><span>01</span><b>Rasmli izohlar</b><p>Murakkab tushunchalarni sxemalar bilan tushuning.</p></div>
+        <div><span>02</span><b>Video darslar</b><p>Mavzu bo‘yicha video darslarni alohida oching.</p></div>
+        <div><span>03</span><b>Amaliy tavsiyalar</b><p>Har bir mavzudan keyin xavfsiz odatni qo‘llang.</p></div>
+      </div>
+
+      <div id="resourceGrid" class="resource-grid"></div>
+      <p id="emptyResources" class="empty-state hidden">Bu qidiruv bo‘yicha material topilmadi.</p>
+      <p class="resource-disclaimer">Eslatma: video havolalari tashqi YouTube qidiruv sahifalariga olib boradi. Videolarning mazmuni va mavjudligi uchinchi tomon tomonidan boshqariladi.</p>
+    </section>
+
+    <section class="cta wrap">
+      <div>
+        <div class="eyebrow">KEYINGI QADAM SIZDAN</div>
+        <h2>Bugun boshlang.<br><span class="green">Ertaga ishonchliroq bo‘ling.</span></h2>
+      </div>
+      <button class="btn btn-primary" id="ctaAuth" type="button">Hisob haqida ↗</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">N.</span><span>NIGHT<span class="green">SHIELD</span><small>ACADEMY</small></span></a>
+      <span>© <span id="year"></span> NIGHTSHIELD ACADEMY. Bilim — himoyaning boshlanishi.</span>
+      <a href="#home">Yuqoriga ↑</a>
+    </div>
+  </footer>
+
+  <div id="lessonModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="lessonTitle">
+    <div class="modal-backdrop" data-close="lessonModal"></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close="lessonModal" type="button" aria-label="Yopish">×</button>
+      <div id="lessonCategory" class="eyebrow">DARS</div>
+      <h2 id="lessonTitle">Dars</h2>
+      <p id="lessonDescription" class="modal-intro"></p>
+      <div id="lessonContent" class="lesson-content"></div>
+      <button id="readCompleteBtn" class="btn btn-primary btn-full" type="button">Testni boshlash</button>
+      <div id="quizWrap" class="quiz-wrap hidden">
+        <div class="quiz-top"><span>YAKUNIY TEST</span><span id="quizCount"></span></div>
+        <div id="quizQuestions"></div>
+        <button id="submitQuiz" class="btn btn-primary btn-full" type="button">Natijani tekshirish</button>
+        <div id="quizResult" class="quiz-result hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="authModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-backdrop" data-close="authModal"></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close="authModal" type="button" aria-label="Yopish">×</button>
+      <div class="modal-brand">N.</div>
+      <div class="eyebrow">NIGHTSHIELD ACCOUNT</div>
+      <h2 id="authTitle">Mahalliy profil</h2>
+      <p class="modal-intro">Bu versiyada profil nomi ushbu brauzerda saqlanadi. Bu haqiqiy server hisobi yoki email tasdiqlash emas.</p>
+      <div id="authStatus" class="status-message hidden" role="status"></div>
+      <form id="profileForm">
+        <label for="profileName">Profil nomi</label>
+        <input id="profileName" maxlength="40" placeholder="Masalan, Night Learner" required>
+        <button class="btn btn-primary btn-full" type="submit">Profilni saqlash</button>
+        <button class="btn btn-outline btn-full" type="button" data-close="authModal">Yopish</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
